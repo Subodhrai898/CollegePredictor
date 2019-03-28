@@ -165,6 +165,29 @@ $stmt->bind_param("iiii",$id,$gn,$st,$obc);
     }
 
 
+
+    public function resultbasic($br,$cat,$rank)
+    {
+      $cat = $br.".".$cat;
+      $net = $br."."."ID";
+       
+       $sql = "SELECT Name, Location,Rate,Type FROM College JOIN ".$br." ON College.ID=".$net." WHERE ".$cat."<".$rank;
+       
+      $result = $this->con->query($sql);
+      
+
+
+
+
+        return $result;
+
+
+
+    }
+
+
+
+
    
 
 

@@ -53,19 +53,17 @@ session_start();
 <br>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 ">
-     
-    </div>
-    <div class="col-sm-6" id="block1">
+    
+    <div class="col-sm-4" id="block1">
     <h4 id ='addc'>Search COLLEGE </h4>
     <form >
     <div class="form-group">
      
-      <input type="number" class="form-control"  placeholder="RANK" name="rank" id="rank" required>
+      <input type="number" class="form-control"  placeholder="RANK" name="rank" id="ranki" required>
     </div>
     <div class="form-group">
   
-  <select class="form-control" id="br">
+  <select class="form-control" id="bri">
     <option name="choice1" value="CSE">CSE</option>
     <option name="choice2" value="ME">ME</option>
     <option name="choice3" value="CE">CE</option>
@@ -74,7 +72,7 @@ session_start();
 </div>
    <div class="form-group">
   
-  <select class="form-control" id="tr">
+  <select class="form-control" id="tri">
     <option name="choice1" value="GN">GN</option>
     <option name="choice2" value="OBC">OBC</option>
     <option name="choice3" value="ST">ST</option>
@@ -90,19 +88,37 @@ session_start();
 
      
     </div>
-    <div class="col-sm-3 " id="adt">
-
+    <div class="col-sm-8 " id="cont">
      
     </div>
+    
   </div>
+<br>
+<br>
+  
 </div>
 <script type="text/javascript">
  $(document).ready(function(){
 
   $("#hit").click(function()
   {
+   
 
-   $("#adt").append($('#rank').val());
+   $.post("query.php",
+  {
+    rank1: $("#ranki").val(),
+    branch: $("#bri").val(),
+    cat: $("#tri").val()
+  },
+  function(data, status){
+    //alert("Data: " + data + "\nStatus: " + status);
+     
+    
+     $("#cont").html(data);
+
+
+  });
+  
 
 
 
