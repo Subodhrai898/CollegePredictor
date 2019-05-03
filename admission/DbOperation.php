@@ -184,7 +184,24 @@ $stmt->bind_param("iiii",$id,$gn,$st,$obc);
 
 
     }
+ public function resultbasicrate($br,$cat,$rank,$det)
+    {
+      $cat = $br.".".$cat;
+      $net = $br."."."ID";
+       
+       $sql = "SELECT Name, Location,Rate,Type FROM College JOIN ".$br." ON College.ID=".$net." WHERE ".$cat."<".$rank." ORDER BY Rate ".$det;
+       
+      $result = $this->con->query($sql);
+      
 
+
+
+
+        return $result;
+
+
+
+    }
 
 
 

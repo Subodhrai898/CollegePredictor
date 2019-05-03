@@ -16,15 +16,15 @@
 
  $db = new DbOperation(); 
 
- $result = $db->resultbasic($_REQUEST['branch'],$_REQUEST['cat'],$_REQUEST['rank1']);
+ $result = $db->resultbasicrate($_REQUEST['branch'],$_REQUEST['cat'],$_REQUEST['rank1'],$_REQUEST['det']);
 
 echo "<table class='table  table-hover'>
     <thead class='table-success'>
       <tr>
-        <th><button type='button' class='btn btn-info'>Name</button></th>
-        <th><button type='button' class='btn btn-info'>Location</button></th>
-        <th><button type='button' class='btn btn-info' id='rtt'>Rate</button></th>
-        <th><button type='button' class='btn btn-info'>Type</button></th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Rating</th>
+        <th>Type</th>
       </tr>
     </thead><tbody>";
 

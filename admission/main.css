@@ -8,5 +8,17 @@
 #block1
 {
 
-	box-shadow: 5px 10px gray;
+	border: 1px solid;
+    padding: 10px;
+   
+   
+}
+#block1:hover
+{
+	 box-shadow: 5px 10px 10px 10px #888888;
+}
+
+#hlm
+{
+	display: none;
 }

@@ -1,5 +1,14 @@
 <?php
 session_start();
+if(isset( $_SESSION['udf']))
+{
+
+
+
+}else
+{
+  die('INVALID CALL');
+}
 ?>
 
 <html>
@@ -38,10 +47,10 @@ session_start();
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Add College </a>
+        <a class="nav-link" href="searchc.php">Search College </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">College List</a>
+        <a class="nav-link" href="login.php">Add College</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">ABOUT</a>
